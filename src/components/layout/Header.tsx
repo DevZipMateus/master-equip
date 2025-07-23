@@ -63,10 +63,11 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
             <a href="#inicio" className="block" onClick={(e) => scrollToSection(e, '#inicio')}>
-              <h1 className="font-bold text-xl md:text-2xl text-blue-900">
-                Master Equipamentos
-                <span className="block text-sm font-normal text-gray-600">de Segurança</span>
-              </h1>
+              <img 
+                src="/lovable-uploads/029a8ddd-29bd-4cdc-b823-299e83686ba9.png" 
+                alt="Master Equipamentos de Segurança" 
+                className="h-12 md:h-16 w-auto"
+              />
             </a>
           </div>
 
@@ -76,7 +77,7 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-900 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-cyan-600 font-medium transition-colors duration-200"
                 onClick={(e) => scrollToSection(e, link.href)}
               >
                 {link.name}
@@ -88,7 +89,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-cyan-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Menu de navegação"
             >
@@ -114,7 +115,7 @@ const Header = () => {
             <a
               key={link.name}
               href={link.href}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50"
               onClick={(e) => scrollToSection(e, link.href)}
             >
               {link.name}

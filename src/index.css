@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --primary-color: #1e3a8a; /* Blue 900 - 30% */
+    --primary-color: #0891b2; /* Cyan 600 - 30% */
     --secondary-color: #ffffff; /* White - 60% */
     --accent-color: #000000; /* Black - 10% */
     
@@ -59,7 +59,7 @@
     --accent-foreground: var(--secondary-color);
     --destructive: #dc2626;
     --destructive-foreground: var(--secondary-color);
-    --border: #2b4539;
+    --border: #0891b2;
     --input: #1a1a1a;
     --ring: var(--primary-color);
   }

@@ -24,10 +24,10 @@ const Hero = () => {
   ];
 
   return (
-    <section id="inicio" ref={sectionRef} className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 overflow-hidden">
+    <section id="inicio" ref={sectionRef} className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-gray-900 to-black overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.3)_1px,transparent_0)] bg-[length:24px_24px]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,255,255,0.3)_1px,transparent_0)] bg-[length:24px_24px]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -46,7 +46,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Reduza Riscos e 
-              <span className="text-blue-300"> Aumente a Segurança</span>
+              <span className="text-cyan-400"> Aumente a Segurança</span>
             </motion.h1>
             
             <motion.p 
@@ -59,7 +59,7 @@ const Hero = () => {
             </motion.p>
 
             <motion.p 
-              className="text-lg mb-8 text-blue-200"
+              className="text-lg mb-8 text-cyan-300"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -75,13 +75,13 @@ const Hero = () => {
             >
               <Button
                 onClick={handleWhatsAppClick}
-                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Solicitar Orçamento
               </Button>
               <Button
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+                className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
                 onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Nossos Serviços
@@ -96,8 +96,8 @@ const Hero = () => {
               className="grid grid-cols-2 gap-4"
             >
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3 text-blue-200">
-                  <feature.icon className="h-5 w-5 text-blue-300" />
+                <div key={index} className="flex items-center space-x-3 text-gray-300">
+                  <feature.icon className="h-5 w-5 text-cyan-400" />
                   <span className="text-sm font-medium">{feature.text}</span>
                 </div>
               ))}
@@ -111,7 +111,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="relative w-full h-96 lg:h-[500px] bg-gradient-to-br from-blue-600/20 to-transparent rounded-3xl backdrop-blur-sm border border-white/20 p-8 flex items-center justify-center">
+            <div className="relative w-full h-96 lg:h-[500px] bg-gradient-to-br from-cyan-600/20 to-transparent rounded-3xl backdrop-blur-sm border border-cyan-400/30 p-8 flex items-center justify-center">
               <div className="grid grid-cols-2 gap-6 w-full h-full">
                 {[Shield, Camera, Phone, Lock].map((Icon, index) => (
                   <motion.div
@@ -119,9 +119,9 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                     transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
-                    className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+                    className="bg-white/10 backdrop-blur-sm rounded-2xl border border-cyan-400/30 flex items-center justify-center hover:bg-cyan-600/20 transition-all duration-300"
                   >
-                    <Icon className="h-12 w-12 md:h-16 md:w-16 text-white" />
+                    <Icon className="h-12 w-12 md:h-16 md:w-16 text-cyan-400" />
                   </motion.div>
                 ))}
               </div>

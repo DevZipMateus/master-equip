@@ -82,7 +82,7 @@ const Services = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Nossos <span className="text-blue-900">Serviços</span>
+            Nossos <span className="text-cyan-600">Serviços</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Oferecemos uma linha completa de equipamentos de segurança eletrônica 
@@ -94,13 +94,13 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+              className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-cyan-300"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.1 * index }}
             >
-              <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <service.icon className="h-8 w-8 text-blue-900" />
+              <div className="bg-cyan-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <service.icon className="h-8 w-8 text-cyan-600" />
               </div>
               
               <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
@@ -109,7 +109,7 @@ const Services = () => {
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, i) => (
                   <li key={i} className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-blue-900 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-cyan-600 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -117,7 +117,7 @@ const Services = () => {
 
               <Button
                 onClick={() => handleWhatsAppClick(service.title)}
-                className="w-full bg-blue-900 hover:bg-blue-800 text-white"
+                className="w-full bg-cyan-600 hover:bg-cyan-700 text-white"
               >
                 <MessageCircle className="h-4 w-4 mr-2" />
                 Solicitar Orçamento
@@ -138,7 +138,7 @@ const Services = () => {
           <Button
             onClick={() => handleWhatsAppClick('equipamentos de segurança personalizados')}
             variant="outline"
-            className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white px-8 py-3"
+            className="border-cyan-600 text-cyan-600 hover:bg-cyan-600 hover:text-white px-8 py-3"
           >
             Falar com Especialista
           </Button>

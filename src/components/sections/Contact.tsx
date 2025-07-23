@@ -42,28 +42,28 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Phone className="h-6 w-6 text-blue-900" />,
+      icon: <Phone className="h-6 w-6 text-cyan-600" />,
       title: 'Telefone',
       details: '(85) 98586-0811',
       action: 'tel:+5585985860811',
       actionText: 'Ligar Agora'
     },
     {
-      icon: <Mail className="h-6 w-6 text-blue-900" />,
+      icon: <Mail className="h-6 w-6 text-cyan-600" />,
       title: 'Email',
       details: 'masterequipamentos2023@gmail.com',
       action: 'mailto:masterequipamentos2023@gmail.com',
       actionText: 'Enviar Email'
     },
     {
-      icon: <MapPin className="h-6 w-6 text-blue-900" />,
+      icon: <MapPin className="h-6 w-6 text-cyan-600" />,
       title: 'Endereço',
       details: 'Rua 46, Número 60',
       action: 'https://maps.google.com/?q=Rua+46+número+60',
       actionText: 'Ver no Mapa'
     },
     {
-      icon: <Instagram className="h-6 w-6 text-blue-900" />,
+      icon: <Instagram className="h-6 w-6 text-cyan-600" />,
       title: 'Instagram',
       details: '@masterequipamentos10',
       action: 'https://instagram.com/masterequipamentos10',
@@ -72,7 +72,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contato" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="contato" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -81,7 +81,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Entre em <span className="text-blue-900">Contato</span>
+            Entre em <span className="text-cyan-600">Contato</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Estamos prontos para atender suas necessidades em equipamentos de segurança. 
@@ -141,7 +141,7 @@ const Contact = () => {
               {contactInfo.map((item, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-blue-50 rounded-lg p-3 flex-shrink-0">
+                    <div className="bg-cyan-50 rounded-lg p-3 flex-shrink-0">
                       {item.icon}
                     </div>
                     <div className="flex-1">
@@ -151,7 +151,7 @@ const Contact = () => {
                         href={item.action} 
                         target={item.action.startsWith('http') ? '_blank' : '_self'}
                         rel={item.action.startsWith('http') ? 'noopener noreferrer' : ''}
-                        className="inline-flex items-center text-sm font-medium text-blue-900 hover:text-blue-700 hover:underline"
+                        className="inline-flex items-center text-sm font-medium text-cyan-600 hover:text-cyan-700 hover:underline"
                       >
                         {item.actionText}
                       </a>
@@ -165,17 +165,17 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-8 bg-gradient-to-br from-blue-900 to-gray-800 rounded-2xl p-6 text-white"
+              className="mt-8 bg-gradient-to-br from-slate-900 to-gray-800 rounded-2xl p-6 text-white"
             >
               <h4 className="text-xl font-bold mb-4">Orçamento Gratuito</h4>
-              <p className="text-blue-200 mb-4">
+              <p className="text-gray-300 mb-4">
                 Solicite um orçamento personalizado sem compromisso. 
                 Nossa equipe técnica está pronta para apresentar a melhor solução para você.
               </p>
               <div className="flex flex-wrap gap-2 text-sm">
-                <span className="bg-blue-800 px-3 py-1 rounded-full">Visita gratuita</span>
-                <span className="bg-blue-800 px-3 py-1 rounded-full">Orçamento sem custo</span>
-                <span className="bg-blue-800 px-3 py-1 rounded-full">Atendimento especializado</span>
+                <span className="bg-cyan-600 px-3 py-1 rounded-full">Visita gratuita</span>
+                <span className="bg-cyan-600 px-3 py-1 rounded-full">Orçamento sem custo</span>
+                <span className="bg-cyan-600 px-3 py-1 rounded-full">Atendimento especializado</span>
               </div>
             </motion.div>
           </motion.div>
