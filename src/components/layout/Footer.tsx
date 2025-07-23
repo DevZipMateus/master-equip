@@ -33,7 +33,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-cyan-400" />
-                <span className="text-gray-300">Rua 46, Número 60</span>
+                <span className="text-gray-300">Rua 46, Número 60 - Maracanaú/CE</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Instagram className="h-5 w-5 text-cyan-400" />

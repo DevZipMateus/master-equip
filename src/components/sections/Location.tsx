@@ -30,14 +30,14 @@ const Location = () => {
   }, []);
 
   const handleDirections = () => {
-    window.open('https://maps.google.com/?q=Rua+46+número+60', '_blank');
+    window.open('https://maps.google.com/?q=Rua+46,+Número+60,+Maracanaú,+CE', '_blank');
   };
 
   const info = [
     {
       icon: MapPin,
       title: 'Endereço',
-      content: 'Rua 46, Número 60',
+      content: 'Rua 46, Número 60\nMaracanaú/CE',
       action: 'Ver no Mapa'
     },
     {
@@ -133,14 +133,14 @@ const Location = () => {
           >
             <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg h-96 lg:h-[500px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126646.21810634705!2d-38.62742049999999!3d-3.71722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c749073d5b8cbf%3A0x5c52d0ee99c78299!2sFortaleza%2C%20CE!5e0!3m2!1spt-BR!2sbr!4v1640000000000!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.4647732448944!2d-38.6208!3d-3.8777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74fad7c9a9c9f%3A0x1234567890abcdef!2sRua%2046%2C%2060%20-%20Maracana%C3%BA%2C%20CE!5e0!3m2!1spt-BR!2sbr!4v1640000000000!5m2!1spt-BR!2sbr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localização Master Equipamentos de Segurança"
+                title="Localização Master Equipamentos de Segurança - Maracanaú/CE"
               ></iframe>
             </div>
             <div className="absolute bottom-4 left-4 right-4">
@@ -148,7 +148,7 @@ const Location = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="font-semibold text-gray-900">Master Equipamentos</h4>
-                    <p className="text-sm text-gray-600">Rua 46, Número 60</p>
+                    <p className="text-sm text-gray-600">Rua 46, Número 60 - Maracanaú/CE</p>
                   </div>
                   <Button
                     size="sm"

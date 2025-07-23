@@ -58,8 +58,8 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6 text-cyan-600" />,
       title: 'Endereço',
-      details: 'Rua 46, Número 60',
-      action: 'https://maps.google.com/?q=Rua+46+número+60',
+      details: 'Rua 46, Número 60 - Maracanaú/CE',
+      action: 'https://maps.google.com/?q=Rua+46,+Número+60,+Maracanaú,+CE',
       actionText: 'Ver no Mapa'
     },
     {
