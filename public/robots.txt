@@ -1,0 +1,24 @@
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://masterequipamentos.com.br/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Allow all crawlers to access main content
+Allow: /
+Allow: /#sobre
+Allow: /#servicos
+Allow: /#depoimentos
+Allow: /#localizacao
+Allow: /#contato
+
+# Crawl delay (optional)
+Crawl-delay: 1

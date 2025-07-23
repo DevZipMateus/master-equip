@@ -19,17 +19,18 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Início', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Serviços', href: '#services' },
-    { name: 'Contato', href: '#contact' },
+    { name: 'Início', href: '#inicio' },
+    { name: 'Sobre', href: '#sobre' },
+    { name: 'Serviços', href: '#servicos' },
+    { name: 'Depoimentos', href: '#depoimentos' },
+    { name: 'Localização', href: '#localizacao' },
+    { name: 'Contato', href: '#contato' },
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     
-    // Handle "Início" link specially to scroll to top
-    if (href === '#home') {
+    if (href === '#inicio') {
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
@@ -38,13 +39,12 @@ const Header = () => {
       const element = document.querySelector(href);
       if (element) {
         window.scrollTo({
-          top: element.getBoundingClientRect().top + window.scrollY - 100,
+          top: element.getBoundingClientRect().top + window.scrollY - 80,
           behavior: 'smooth',
         });
       }
     }
     
-    // Close mobile menu if open
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
@@ -53,49 +53,49 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'fixed w-full z-50 transition-all duration-300 ease-in-out py-4',
+        'fixed w-full z-50 transition-all duration-300 ease-in-out',
         isScrolled
-          ? 'bg-white/95 backdrop-blur-sm shadow-subtle'
-          : 'bg-transparent'
+          ? 'bg-white shadow-lg py-2'
+          : 'bg-white/95 backdrop-blur-sm py-4'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="block">
-              <span className="font-display text-2xl font-bold text-blue-600">Contabilidade</span>
+            <a href="#inicio" className="block" onClick={(e) => scrollToSection(e, '#inicio')}>
+              <h1 className="font-bold text-xl md:text-2xl text-blue-900">
+                Master Equipamentos
+                <span className="block text-sm font-normal text-gray-600">de Segurança</span>
+              </h1>
             </a>
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex space-x-2 items-center">
+          <nav className="hidden md:flex space-x-8 items-center">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="nav-link"
+                className="text-gray-700 hover:text-blue-900 font-medium transition-colors duration-200"
                 onClick={(e) => scrollToSection(e, link.href)}
               >
                 {link.name}
               </a>
             ))}
-            <a href="#contact" className="ml-4 btn-primary">
-              Agende uma Consulta
-            </a>
           </nav>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-700 hover:text-blue-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Menu de navegação"
             >
-              <span className="sr-only">Abrir menu</span>
               {isMobileMenuOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
+                <X className="block h-6 w-6" />
               ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
+                <Menu className="block h-6 w-6" />
               )}
             </button>
           </div>
@@ -105,30 +105,21 @@ const Header = () => {
       {/* Mobile menu */}
       <div
         className={cn(
-          'md:hidden transition-all duration-300 ease-bounce-ease overflow-hidden',
+          'md:hidden transition-all duration-300 ease-in-out overflow-hidden',
           isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         )}
       >
-        <div className="px-4 py-3 space-y-1 bg-white/95 backdrop-blur-sm border-t">
+        <div className="px-4 py-3 space-y-1 bg-white border-t">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-500 hover:bg-slate-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
               onClick={(e) => scrollToSection(e, link.href)}
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-2">
-            <a
-              href="#contact"
-              className="block w-full text-center px-4 py-3 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600"
-              onClick={(e) => scrollToSection(e, '#contact')}
-            >
-              Agende uma Consulta
-            </a>
-          </div>
         </div>
       </div>
     </header>

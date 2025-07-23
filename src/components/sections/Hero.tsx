@@ -1,125 +1,133 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import { Shield, Camera, Phone, Lock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const vantaEffect = useRef<any>(null);
 
   useEffect(() => {
     setIsVisible(true);
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
   }, []);
 
-  useEffect(() => {
-    if (sectionRef.current && (window as any).VANTA) {
-      vantaEffect.current = (window as any).VANTA.NET({
-        el: sectionRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x3fff6c,
-        backgroundColor: 0x1a0b34,
-        points: 4.00,
-        maxDistance: 24.00,
-        spacing: 17.00
-      });
-    }
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/5585985860811?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20equipamentos%20de%20segurança.', '_blank');
+  };
 
-    return () => {
-      if (vantaEffect.current) {
-        vantaEffect.current.destroy();
-      }
-    };
-  }, []);
+  const features = [
+    { icon: Camera, text: 'Câmeras de Segurança' },
+    { icon: Shield, text: 'Sistemas de Alarme' },
+    { icon: Phone, text: 'Porteiro Eletrônico' },
+    { icon: Lock, text: 'Controle de Acesso' }
+  ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      id="home"
-    >
-      <div className="relative z-10 section-container flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-blue-600 bg-blue-100 rounded-full">
-            Escritório de Contabilidade
-          </div>
-        </motion.div>
+    <section id="inicio" ref={sectionRef} className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.3)_1px,transparent_0)] bg-[length:24px_24px]"></div>
+      </div>
 
-        <motion.h1
-          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-tight lg:leading-tight mb-6 max-w-4xl text-white"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          Soluções Contábeis Personalizadas para o{' '}
-          <span className="text-gradient">Sucesso do Seu Negócio</span>
-        </motion.h1>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.8 }}
+            className="text-white"
+          >
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Reduza Riscos e 
+              <span className="text-blue-300"> Aumente a Segurança</span>
+            </motion.h1>
+            
+            <motion.p 
+              className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Com Nossos Sistemas Eletrônicos, Conte Com a Nossa Experiência Para Proteger Seu Patrimônio
+            </motion.p>
 
-        <motion.p
-          className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          Combinamos experiência e tecnologia para oferecer serviços contábeis eficientes e
-          estratégicos, ajudando sua empresa a crescer e prosperar.
-        </motion.p>
+            <motion.p 
+              className="text-lg mb-8 text-blue-200"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Trabalhamos Com Todos Equipamentos De Segurança Eletrônica
+            </motion.p>
 
-        <motion.div
-          className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <a href="#contact" className="btn-primary">
-            Agende uma Consulta
-          </a>
-          <a href="#services" className="btn-secondary">
-            Conheça Nossos Serviços
-          </a>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+            >
+              <Button
+                onClick={handleWhatsAppClick}
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Solicitar Orçamento
+              </Button>
+              <Button
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+                onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Nossos Serviços
+              </Button>
+            </motion.div>
 
-        <motion.div
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center"
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-        >
-          <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center p-1">
-            <div className="w-1.5 h-3 bg-slate-400 rounded-full animate-bounce"></div>
-          </div>
-          <span className="text-sm text-slate-500 mt-2">Role para baixo</span>
-        </motion.div>
+            {/* Features Grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3 text-blue-200">
+                  <feature.icon className="h-5 w-5 text-blue-300" />
+                  <span className="text-sm font-medium">{feature.text}</span>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Visual Element */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative"
+          >
+            <div className="relative w-full h-96 lg:h-[500px] bg-gradient-to-br from-blue-600/20 to-transparent rounded-3xl backdrop-blur-sm border border-white/20 p-8 flex items-center justify-center">
+              <div className="grid grid-cols-2 gap-6 w-full h-full">
+                {[Shield, Camera, Phone, Lock].map((Icon, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+                    transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+                  >
+                    <Icon className="h-12 w-12 md:h-16 md:w-16 text-white" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

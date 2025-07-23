@@ -1,16 +1,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -34,10 +32,8 @@ const Contact = () => {
   }, []);
 
   const handleWhatsAppClick = () => {
-    // Open WhatsApp with predefined message
-    window.open('https://wa.me/5521999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20contábeis.', '_blank');
+    window.open('https://wa.me/5585985860811?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20equipamentos%20de%20segurança.', '_blank');
     
-    // Show toast notification
     toast({
       title: "Redirecionando para o WhatsApp",
       description: "Você será conectado com nossa equipe."
@@ -46,71 +42,86 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Phone className="h-6 w-6 text-blue-500" />,
+      icon: <Phone className="h-6 w-6 text-blue-900" />,
       title: 'Telefone',
-      details: '(21) 99999-9999',
-      action: 'tel:+5521999999999',
-      actionText: 'Contato via Telefone'
+      details: '(85) 98586-0811',
+      action: 'tel:+5585985860811',
+      actionText: 'Ligar Agora'
     },
     {
-      icon: <Mail className="h-6 w-6 text-blue-500" />,
+      icon: <Mail className="h-6 w-6 text-blue-900" />,
       title: 'Email',
-      details: 'contato@contabilidade.com',
-      action: 'mailto:contato@contabilidade.com',
-      actionText: 'Contato via Email'
+      details: 'masterequipamentos2023@gmail.com',
+      action: 'mailto:masterequipamentos2023@gmail.com',
+      actionText: 'Enviar Email'
     },
     {
-      icon: <MapPin className="h-6 w-6 text-blue-500" />,
+      icon: <MapPin className="h-6 w-6 text-blue-900" />,
       title: 'Endereço',
-      details: 'Av. Presidente Vargas, 123, Centro, Rio de Janeiro - RJ',
-      action: 'https://maps.google.com',
+      details: 'Rua 46, Número 60',
+      action: 'https://maps.google.com/?q=Rua+46+número+60',
       actionText: 'Ver no Mapa'
+    },
+    {
+      icon: <Instagram className="h-6 w-6 text-blue-900" />,
+      title: 'Instagram',
+      details: '@masterequipamentos10',
+      action: 'https://instagram.com/masterequipamentos10',
+      actionText: 'Seguir no Instagram'
     }
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="bg-white py-16">
-      <div className="section-container px-4 md:px-8">
+    <section id="contato" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center max-w-3xl mx-auto mb-12" 
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-blue-600 bg-blue-100 rounded-full">
-            Contato
-          </div>
-          <h2 className="section-title text-3xl md:text-4xl font-bold mb-4">Entre em Contato Conosco</h2>
-          <p className="section-subtitle text-slate-600">
-            Estamos prontos para atender às suas necessidades contábeis. Entre em contato 
-            através de um dos nossos canais de atendimento ou nos envie uma mensagem pelo WhatsApp.
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Entre em <span className="text-blue-900">Contato</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            Estamos prontos para atender suas necessidades em equipamentos de segurança. 
+            Entre em contato através de um dos nossos canais ou nos envie uma mensagem.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* WhatsApp Contact Card */}
           <motion.div 
             className="order-2 lg:order-1"
-            initial={{ opacity: 0, x: -20 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="w-full p-8 rounded-xl shadow-lg bg-white border border-slate-100">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Fale Conosco</h3>
-              <p className="text-slate-600 mb-8">
-                Clique no botão abaixo para iniciar uma conversa no WhatsApp com nossa equipe de atendimento.
-              </p>
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <div className="text-center mb-8">
+                <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="h-10 w-10 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Fale Conosco pelo WhatsApp
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Receba atendimento personalizado e tire todas suas dúvidas sobre 
+                  nossos equipamentos de segurança diretamente pelo WhatsApp.
+                </p>
+              </div>
               
               <Button 
                 onClick={handleWhatsAppClick}
-                className="w-full py-6 text-lg gap-2 bg-green-500 hover:bg-green-600 transition-all duration-300"
+                className="w-full py-6 text-lg gap-3 bg-green-600 hover:bg-green-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <Send className="h-5 w-5" />
-                Conversar no WhatsApp
+                <Send className="h-6 w-6" />
+                Iniciar Conversa no WhatsApp
               </Button>
               
-              <div className="mt-8 text-center text-slate-500 text-sm">
-                Horário de atendimento: Segunda a Sexta, das 9h às 18h
+              <div className="mt-6 text-center text-gray-500 text-sm">
+                <p>Horário de atendimento:</p>
+                <p className="font-medium">Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h</p>
               </div>
             </div>
           </motion.div>
@@ -118,42 +129,55 @@ const Contact = () => {
           {/* Contact Info */}
           <motion.div 
             className="order-1 lg:order-2" 
-            initial={{ opacity: 0, x: 20 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="space-y-8">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">
+                Outras Formas de Contato
+              </h3>
+              
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-start hover:bg-slate-50 p-4 rounded-lg transition-colors duration-200">
-                  <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-50">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-medium text-slate-900">{item.title}</h4>
-                    <p className="mt-1 text-slate-600">{item.details}</p>
-                    <a 
-                      href={item.action} 
-                      className="mt-2 inline-block text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline"
-                    >
-                      {item.actionText}
-                    </a>
+                <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-50 rounded-lg p-3 flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h4>
+                      <p className="text-gray-600 mb-3">{item.details}</p>
+                      <a 
+                        href={item.action} 
+                        target={item.action.startsWith('http') ? '_blank' : '_self'}
+                        rel={item.action.startsWith('http') ? 'noopener noreferrer' : ''}
+                        className="inline-flex items-center text-sm font-medium text-blue-900 hover:text-blue-700 hover:underline"
+                      >
+                        {item.actionText}
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 overflow-hidden rounded-xl border border-slate-200 h-64 shadow-md">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2960758544593!2d-43.19234492359807!3d-22.903458836872207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5fd24e0bff%3A0x99447fc2399718e9!2sAv.%20Pres.%20Vargas%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1718121266831!5m2!1spt-BR!2sbr" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade" 
-                title="Mapa de localização"
-              ></iframe>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="mt-8 bg-gradient-to-br from-blue-900 to-gray-800 rounded-2xl p-6 text-white"
+            >
+              <h4 className="text-xl font-bold mb-4">Orçamento Gratuito</h4>
+              <p className="text-blue-200 mb-4">
+                Solicite um orçamento personalizado sem compromisso. 
+                Nossa equipe técnica está pronta para apresentar a melhor solução para você.
+              </p>
+              <div className="flex flex-wrap gap-2 text-sm">
+                <span className="bg-blue-800 px-3 py-1 rounded-full">Visita gratuita</span>
+                <span className="bg-blue-800 px-3 py-1 rounded-full">Orçamento sem custo</span>
+                <span className="bg-blue-800 px-3 py-1 rounded-full">Atendimento especializado</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
