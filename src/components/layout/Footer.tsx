@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -9,7 +8,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="order-1">
             <img 
-              src="/lovable-uploads/029a8ddd-29bd-4cdc-b823-299e83686ba9.png" 
+              src="/lovable-uploads/306e7658-f1af-4b09-aee8-1bd1c42bc612.png" 
               alt="Master Equipamentos de Segurança" 
               className="h-12 sm:h-16 w-auto mb-3 sm:mb-4"
             />
