@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Camera, Phone, Lock } from 'lucide-react';
@@ -39,7 +40,7 @@ const Hero = () => {
             className="text-white"
           >
             <motion.div 
-              className="flex flex-col lg:flex-row lg:items-center lg:gap-6 mb-6"
+              className="flex flex-col sm:flex-row sm:items-center sm:gap-4 lg:gap-6 mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -51,7 +52,7 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/306e7658-f1af-4b09-aee8-1bd1c42bc612.png" 
                 alt="Master Equipamentos de Segurança" 
-                className="h-16 md:h-20 lg:h-24 w-auto mt-4 lg:mt-0"
+                className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto mt-3 sm:mt-0 mx-auto sm:mx-0 flex-shrink-0"
               />
             </motion.div>
             
