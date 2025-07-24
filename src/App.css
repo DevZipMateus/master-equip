@@ -8,19 +8,15 @@
 
 /* Base styles for the 60-30-10 rule */
 :root {
-  --color-primary: #f8fafc; /* Slate 50 - 60% */
+  --color-primary: #111827; /* Dark background - 60% */
   --color-secondary: #0070F0; /* Blue 500 - 30% */
-  --color-accent: #0f172a; /* Slate 900 - 10% */
-}
-
-body {
-  background-color: var(--color-primary);
-  color: var(--color-accent);
+  --color-accent: #ffffff; /* White - 10% */
 }
 
 /* Optimizing spacing between sections */
 section {
   padding: 3rem 0;
+  background: transparent; /* Let the body gradient show through */
 }
 
 /* Other styles remain the same */
@@ -54,10 +50,13 @@ section {
 
 .card {
   padding: 2em;
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.2);
+  color: white;
 }
 
 .read-the-docs {
-  color: #888;
+  color: #94a3b8;
 }
 
 /* WhatsApp floating button pulse animation */
