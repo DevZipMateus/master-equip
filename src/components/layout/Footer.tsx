@@ -67,6 +67,9 @@ const Footer = () => {
           <p className="text-gray-400 text-sm sm:text-base">
             © 2024 Master Equipamentos de Segurança. Todos os direitos reservados.
           </p>
+          <p className="text-gray-500 text-xs sm:text-sm mt-2">
+            Desenvolvido por MonteSite
+          </p>
         </div>
       </div>
     </footer>
