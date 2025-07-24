@@ -22,19 +22,19 @@ const MasterSecurity = () => {
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://masterequipamentos.com.br/" />
+        <meta property="og:url" content="https://masterequip.com.br/" />
         <meta property="og:title" content="Master Equipamentos de Segurança - Proteção Eletrônica Completa" />
         <meta property="og:description" content="Reduza riscos e aumente a segurança com nossos sistemas eletrônicos. Especialistas em equipamentos de segurança eletrônica." />
         <meta property="og:image" content="/og-image.png" />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://masterequipamentos.com.br/" />
+        <meta property="twitter:url" content="https://masterequip.com.br/" />
         <meta property="twitter:title" content="Master Equipamentos de Segurança - Proteção Eletrônica Completa" />
         <meta property="twitter:description" content="Reduza riscos e aumente a segurança com nossos sistemas eletrônicos. Especialistas em equipamentos de segurança eletrônica." />
         <meta property="twitter:image" content="/og-image.png" />
         
-        <link rel="canonical" href="https://masterequipamentos.com.br/" />
+        <link rel="canonical" href="https://masterequip.com.br/" />
       </Helmet>
       
       <div className="min-h-screen bg-white">

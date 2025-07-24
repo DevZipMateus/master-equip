@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://masterequipamentos.com.br/sitemap.xml
+Sitemap: https://masterequip.com.br/sitemap.xml
 
 # Disallow admin and private areas
 Disallow: /admin/
