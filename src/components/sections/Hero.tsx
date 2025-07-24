@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Camera, Phone, Lock } from 'lucide-react';
+import { Camera, Phone, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -17,8 +17,8 @@ const Hero = () => {
   };
 
   const features = [
-    { icon: Camera, text: 'Câmeras de Segurança' },
-    { icon: Shield, text: 'Sistemas de Alarme' },
+    { icon: 'shield', text: 'Câmeras de Segurança' },
+    { icon: Camera, text: 'Sistemas de Alarme' },
     { icon: Phone, text: 'Porteiro Eletrônico' },
     { icon: Lock, text: 'Controle de Acesso' }
   ];
@@ -104,7 +104,15 @@ const Hero = () => {
             >
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3 text-gray-300">
-                  <feature.icon className="h-5 w-5 text-cyan-400" />
+                  {feature.icon === 'shield' ? (
+                    <img 
+                      src="/lovable-uploads/12824c8d-8942-4b3e-9387-0348f2b075fb.png" 
+                      alt="Shield" 
+                      className="h-5 w-5"
+                    />
+                  ) : (
+                    <feature.icon className="h-5 w-5 text-cyan-400" />
+                  )}
                   <span className="text-sm font-medium">{feature.text}</span>
                 </div>
               ))}
@@ -120,12 +128,24 @@ const Hero = () => {
           >
             <div className="relative w-full h-96 lg:h-[500px] bg-gradient-to-br from-cyan-600/20 to-transparent rounded-3xl backdrop-blur-sm border border-cyan-400/30 p-8 flex items-center justify-center">
               <div className="grid grid-cols-2 gap-6 w-full h-full">
-                {[Shield, Camera, Phone, Lock].map((Icon, index) => (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl border border-cyan-400/30 flex items-center justify-center hover:bg-cyan-600/20 transition-all duration-300"
+                >
+                  <img 
+                    src="/lovable-uploads/12824c8d-8942-4b3e-9387-0348f2b075fb.png" 
+                    alt="Shield" 
+                    className="h-12 w-12 md:h-16 md:w-16"
+                  />
+                </motion.div>
+                {[Camera, Phone, Lock].map((Icon, index) => (
                   <motion.div
-                    key={index}
+                    key={index + 1}
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-                    transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
+                    transition={{ duration: 0.6, delay: 1.2 + (index + 1) * 0.1 }}
                     className="bg-white/10 backdrop-blur-sm rounded-2xl border border-cyan-400/30 flex items-center justify-center hover:bg-cyan-600/20 transition-all duration-300"
                   >
                     <Icon className="h-12 w-12 md:h-16 md:w-16 text-cyan-400" />
