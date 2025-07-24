@@ -137,7 +137,7 @@ const Hero = () => {
                   <img 
                     src="/lovable-uploads/12824c8d-8942-4b3e-9387-0348f2b075fb.png" 
                     alt="Shield" 
-                    className="h-12 w-12 md:h-16 md:w-16"
+                    className="h-16 w-16 md:h-24 md:w-24 lg:h-28 lg:w-28"
                   />
                 </motion.div>
                 {[Camera, Phone, Lock].map((Icon, index) => (
