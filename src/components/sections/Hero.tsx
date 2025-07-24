@@ -40,13 +40,18 @@ const Hero = () => {
             className="text-white"
           >
             <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight flex flex-col items-start"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Reduza Riscos e 
-              <span className="text-cyan-400"> Aumente a Segurança</span>
+              <span>Reduza Riscos e</span>
+              <span className="text-cyan-400">Aumente a Segurança</span>
+              <img 
+                src="/lovable-uploads/306e7658-f1af-4b09-aee8-1bd1c42bc612.png" 
+                alt="Master Equipamentos de Segurança" 
+                className="h-16 md:h-20 lg:h-24 w-auto mt-4"
+              />
             </motion.h1>
             
             <motion.p 
