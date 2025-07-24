@@ -73,7 +73,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="servicos" ref={sectionRef} className="py-20 bg-white">
+    <section id="servicos" ref={sectionRef} className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -81,10 +81,10 @@ const Services = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Nossos <span className="text-cyan-600">Serviços</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Nossos <span className="text-cyan-400">Serviços</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             Oferecemos uma linha completa de equipamentos de segurança eletrônica 
             com instalação profissional e suporte técnico especializado.
           </p>
@@ -94,22 +94,22 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-cyan-300"
+              className="bg-slate-800/50 rounded-2xl p-8 hover:bg-slate-800/70 transition-all duration-300 border border-slate-700"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.1 * index }}
             >
-              <div className="bg-cyan-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <service.icon className="h-8 w-8 text-cyan-600" />
+              <div className="bg-cyan-600/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <service.icon className="h-8 w-8 text-cyan-400" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
               
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-center text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-cyan-600 rounded-full mr-3"></div>
+                  <li key={i} className="flex items-center text-sm text-gray-400">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -132,13 +132,13 @@ const Services = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-300 mb-6">
             Precisa de um equipamento específico? Entre em contato conosco!
           </p>
           <Button
             onClick={() => handleWhatsAppClick('equipamentos de segurança personalizados')}
             variant="outline"
-            className="border-cyan-600 text-cyan-600 hover:bg-cyan-600 hover:text-white px-8 py-3"
+            className="border-cyan-400 text-cyan-400 hover:bg-cyan-600 hover:text-white px-8 py-3"
           >
             Falar com Especialista
           </Button>
